@@ -74,6 +74,10 @@ function main {
 			TARGET_ARCHS+=("ppc64le")
 		fi
 
+		if [ ${GOOS} == "darwin" ]; then
+			TARGET_ARCHS+=("arm64")
+		fi		
+
 		for TARGET_ARCH in "${TARGET_ARCHS[@]}"; do
 			export GOARCH=${TARGET_ARCH}
 
